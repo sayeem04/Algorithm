@@ -1,11 +1,10 @@
 #include<iostream>
 using namespace std;
 
-int main() {
-    int arr[] = {5, 8, 6, 1, 7, 9};
-    int size = sizeof(arr) / sizeof(arr[0]);
+void insertionSort(int arr[], int size) {
     int x;
-    for (int i = 0; i < size; i++) {
+
+    for (int i = 1; i < size; i++) {
         x = arr[i];
         int j = i - 1;
         while (j >= 0 && arr[j] > x) {
@@ -17,4 +16,10 @@ int main() {
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
     }
+}
+
+int main() {
+    int arr[] = {5, 8, 6, 1, 7, 9};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    insertionSort(arr, size);
 }
